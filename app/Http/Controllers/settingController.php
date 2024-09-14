@@ -6,7 +6,5 @@ use Illuminate\Http\Request;
 
 class settingController extends Controller
 {
-    public function index(){
-        return view('dashboard.setting.index');
-    }
+    
 }
