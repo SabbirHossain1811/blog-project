@@ -21,6 +21,7 @@
     <link href="{{ 'bashboard' }}/assets/css/style.min.css" rel="stylesheet" type="text/css">
     <link href="{{ 'bashboard' }}/assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="{{ 'bashboard' }}/assets/js/config.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -325,7 +326,12 @@
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{ 'bashboard' }}/assets/images/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
+                                @if (auth()->user()->image == 'deafult.jpg')
+                                <img src="{{ asset('uploads/default') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
+                                @else
+                                <img src="{{ asset('uploads/default') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
+                                @endif
+
                                 <span class="ms-1 d-none d-md-inline-block">{{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
@@ -452,6 +458,7 @@
 
    {{-- swwet alart --}}
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
    @yield('script')
 
