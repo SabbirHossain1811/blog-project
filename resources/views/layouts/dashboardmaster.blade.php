@@ -21,6 +21,7 @@
     <link href="{{ 'bashboard' }}/assets/css/style.min.css" rel="stylesheet" type="text/css">
     <link href="{{ 'bashboard' }}/assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="{{ 'bashboard' }}/assets/js/config.js"></script>
+
 </head>
 
 <body>
@@ -63,60 +64,43 @@
 
                     <li class="menu-item">
                         <a class='menu-link waves-effect waves-light' href='{{ route('profile.index') }}'>
-                            <span class="menu-icon"><i class="bx bx-calendar"></i></span>
+                            <span class="menu-icon"><i class="fa-solid fa-face-flushed"></i></span>
                             <span class="menu-text"> Profile </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class='menu-link waves-effect waves-light' href='{{ route('setting.index') }}'>
+                            <span class="menu-icon"><i class="fa-solid fa-users-gear"></i></span>
+                            <span class="menu-text">Settings</span>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="#menuExpages" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                             <span class="menu-icon"><i class="bx bx-file"></i></span>
-                            <span class="menu-text"> Settings </span>
+                            <span class="menu-text"> Extra </span>
                             <span class="menu-arrow"></span>
                         </a>
-                        <div class="collapse" id="menuExpages">
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a class='menu-link' href='{{ route('name.index') }}'>
-                                        <span class="menu-text">Name Update</span>
+                        {{-- <div class="collapse" id="menuExpages">
+                            <ul  class='sub-menu'>
+                                <li style="list-style-type:none;"  class="menu-item ">
+                                    <a  class='menu-link waves-effect waves-light' href=''>
+                                        <span class="menu-text">  <i class="fa-regular fa-pen-to-square"></i> Name Update</span>
                                     </a>
                                 </li>
-                                <li class="menu-item">
+                                <li  class="menu-item">
                                     <a class='menu-link' href='pages-invoice.html'>
-                                        <span class="menu-text">Invoice</span>
+
+                                        <span class="menu-text"><i class="fa-regular fa-pen-to-square"></i> Gmail Update</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a class='menu-link' href='pages-login.html'>
-                                        <span class="menu-text">Log In</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class='menu-link' href='pages-register.html'>
-                                        <span class="menu-text">Register</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class='menu-link' href='pages-recoverpw.html'>
-                                        <span class="menu-text">Recover Password</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class='menu-link' href='pages-lock-screen.html'>
-                                        <span class="menu-text">Lock Screen</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class='menu-link' href='pages-404.html'>
-                                        <span class="menu-text">Error 404</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class='menu-link' href='pages-500.html'>
-                                        <span class="menu-text">Error 500</span>
+                                        <span class="menu-text "> <i class="fa-regular fa-pen-to-square"></i> Password Update </span>
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </li>
                 </ul>
             </div>
@@ -465,6 +449,11 @@
 
 <!-- Dashboard init-->
 <script src="{{ 'bashboard' }}/assets/js/pages/dashboard.js"></script>
+
+   {{-- swwet alart --}}
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   @yield('script')
 
 </body>
 
