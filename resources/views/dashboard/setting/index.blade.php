@@ -60,7 +60,7 @@
                     <form  action="{{ route('setting.password') }} " method="POST">
                         @csrf
                         <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label"> Cueernt Password</label>
+                            <label for="exampleInputEmail1" class="form-label"> Current Password</label>
                             <input style="border: 1px solid rgb(43, 112, 97);" value="{{ old('password') }}" type="password" name="c_password" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                             @error('c_password')
                             <p class="text-danger mt-2">
@@ -102,7 +102,7 @@
                 <form  action="{{ route('setting.image') }} " method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-2">
-                        <label for="exampleInputEmail1" class="form-label"> Cueernt Password</label>
+                        <label for="exampleInputEmail1" class="form-label"> Current Password</label>
                         <input style="border: 1px solid rgb(43, 112, 97);" value="{{ old('password') }}" type="file" name="image" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                         @error('image')
                         <p class="text-danger mt-2">
@@ -185,6 +185,27 @@
   onClick: function(){} // Callback after click
 }).showToast();
 </script>
-
 @endif
+
+{{-- image --}}
+@if (session('image_update'))
+
+<script>
+   Toastify({
+  text: "{{ session('image_update') }}",
+  duration: 3000,
+  destination: "https://github.com/apvarun/toastify-js",
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+</script>
+@endif
+
 @endsection
