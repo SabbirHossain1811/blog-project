@@ -79,7 +79,7 @@
                         </div>
                         <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label">Confrim Password</label>
-                            <input style="border: 1px solid rgb(43, 112, 97);" value="{{ old('password') }}" type="password" name="password_confirmation" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input  style="border: 1px solid rgb(43, 112, 97);" value="{{ old('password') }}" type="password" name="password_confirmation" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                             @error('')
                             <p class="text-danger mt-2">
                                 <strong>{{ $message }}</strong>
@@ -109,6 +109,7 @@
                             <strong>{{ $message }}</strong>
                         </p>
                         @enderror
+
                     </div>
                     <button style="background-color:rgb(54, 95, 97); border:none;" type="submit" class="btn btn-primary col-12">Update</button>
                 </form>

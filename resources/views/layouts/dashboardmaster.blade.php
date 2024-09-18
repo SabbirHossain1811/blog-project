@@ -78,30 +78,19 @@
                     </li>
                     <li class="menu-item">
                         <a href="#menuExpages" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-file"></i></span>
-                            <span class="menu-text"> Extra </span>
+                            <span class="menu-icon"><i class="fa-solid fa-layer-group"></i></span>
+                            <span class="menu-text"> Category </span>
                             <span class="menu-arrow"></span>
                         </a>
-                        {{-- <div class="collapse" id="menuExpages">
-                            <ul  class='sub-menu'>
-                                <li style="list-style-type:none;"  class="menu-item ">
-                                    <a  class='menu-link waves-effect waves-light' href=''>
-                                        <span class="menu-text">  <i class="fa-regular fa-pen-to-square"></i> Name Update</span>
-                                    </a>
-                                </li>
-                                <li  class="menu-item">
-                                    <a class='menu-link' href='pages-invoice.html'>
-
-                                        <span class="menu-text"><i class="fa-regular fa-pen-to-square"></i> Gmail Update</span>
-                                    </a>
-                                </li>
+                        <div class="collapse" id="menuExpages">
+                            <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a class='menu-link' href='pages-login.html'>
-                                        <span class="menu-text "> <i class="fa-regular fa-pen-to-square"></i> Password Update </span>
+                                    <a class='menu-link' href='{{ route('cetegory.index') }}'>
+                                        <span class="menu-text">Show Categories</span>
                                     </a>
                                 </li>
                             </ul>
-                        </div> --}}
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -371,7 +360,7 @@
                                     @csrf
                                     <button class='dropdown-item notify-item' type="submit">
                                         <i class="fe-log-out"></i>
-                                        <span class="text-danger">Logout</span>
+                                        <span style="font-weight: bold;" class="text-danger">Logout</span>
                                     </button>
                                 </form>
 
