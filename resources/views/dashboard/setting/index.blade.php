@@ -4,7 +4,7 @@
 
     {{-- name --}}
     <div style="margin-top: 50px" class="row ">
-        <div class="col-lg-6 row-10">
+        {{-- <div class="col-lg-6 row-10">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-3">Username Update </h4>
@@ -24,11 +24,11 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- end col -->
 
         {{-- email --}}
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-3"> Useremail Update</h4>
@@ -48,11 +48,11 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
          {{-- password --}}
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-3"> Password Update</h4>
@@ -90,11 +90,11 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
       {{-- image --}}
-      <div class="col-lg-6">
+      {{-- <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title mb-3"> Image Update</h4>
@@ -115,98 +115,12 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 
 
  @endsection
 
 @section('script')
-{{-- name --}}
-@if (session('name_update'))
-
-<script>
-    Toastify({
-  text: "{{ session('name_update') }}",
-  duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right",
- // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-</script>
-
-@endif
-
-{{-- email --}}
-@if (session('email_update'))
-
-<script>
-   Toastify({
-  text: "{{ session('email_update') }}",
-  duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-</script>
-
-@endif
-
-{{-- password --}}
-@if (session('password_update'))
-
-<script>
-   Toastify({
-  text: "{{ session('password_update') }}",
-  duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-</script>
-@endif
-
-{{-- image --}}
-@if (session('image_update'))
-
-<script>
-   Toastify({
-  text: "{{ session('image_update') }}",
-  duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-</script>
-@endif
 
 @endsection

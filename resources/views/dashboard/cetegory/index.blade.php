@@ -10,8 +10,7 @@
                         <tr>
                           <th>Cetegory Image</th>
                           <th>Title</th>
-                          <th></th>
-                          <th>Position</th>
+                          <th>Status</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -33,11 +32,13 @@
                           <td>
                             <span class="badge bg-success p-2   rounded-pill d-inline">Active</span>
                           </td>
-                          <td>Senior</td>
                           <td>
-                            <button type="button" class="btn btn-link btn-sm btn-rounded">
-                              Edit
-                            </button>
+                            <a href="" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            <a href="" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
                           </td>
                         </tr>
                         @endforeach
@@ -68,10 +69,13 @@
                         <label for="inputPassword3" class="col-sm-3 col-form-label">Category Slug</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="Category Slug" name="slug">
+                            @error('slug')
+                            <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <img id="montrimosai"  src="{{ asset('uploads/default/default.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain;">
+                        <img id="montrimosai"  src="{{ asset('uploads/default/404f.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain; margin-left:70px;">
                     </div>
                     <div class="row mb-2">
                         <label for="inputPassword5" class="col-sm-3 col-form-label">Category Image</label>

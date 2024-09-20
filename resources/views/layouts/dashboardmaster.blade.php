@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
 
 <!-- Mirrored from myrathemes.com/dashtrap/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Mar 2024 03:40:24 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="utf-8" />
     <title>Dashboard </title>
@@ -16,6 +17,7 @@
     <link rel="shortcut icon" href="{{ 'bashboard' }}/assets/images/favicon.ico">
 
     <link href="{{ 'bashboard' }}/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
+
 
     <!-- App css -->
     <link href="{{ 'bashboard' }}/assets/css/style.min.css" rel="stylesheet" type="text/css">
@@ -34,16 +36,22 @@
         <div class="main-menu">
             <!-- Brand Logo -->
             <div class="logo-box">
+
+
                 <!-- Brand Logo Light -->
                 <a class='logo-light' href='index.html'>
-                    <img src="{{ 'bashboard' }}/assets/images/logo-light.png" alt="logo" class="logo-lg" height="28">
-                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                    <img src="{{ 'bashboard' }}/assets/images/logo-light.png" alt="logo" class="logo-lg"
+                        height="28">
+                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm"
+                        height="28">
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a class='logo-dark' href='index.html'>
-                    <img src="{{ 'bashboard' }}/assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="28">
-                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                    <img src="{{ 'bashboard' }}/assets/images/logo-dark.png" alt="dark logo" class="logo-lg"
+                        height="28">
+                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm"
+                        height="28">
                 </a>
             </div>
 
@@ -113,14 +121,18 @@
                         <div class="logo-box">
                             <!-- Brand Logo Light -->
                             <a class='logo-light' href='index.html'>
-                                <img src="{{ 'bashboard' }}/assets/images/logo-light.png" alt="logo" class="logo-lg" height="22">
-                                <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="22">
+                                <img src="{{ 'bashboard' }}/assets/images/logo-light.png" alt="logo"
+                                    class="logo-lg" height="22">
+                                <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo"
+                                    class="logo-sm" height="22">
                             </a>
 
                             <!-- Brand Logo Dark -->
                             <a class='logo-dark' href='index.html'>
-                                <img src="{{ 'bashboard' }}/assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="22">
-                                <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="22">
+                                <img src="{{ 'bashboard' }}/assets/images/logo-dark.png" alt="dark logo"
+                                    class="logo-lg" height="22">
+                                <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo"
+                                    class="logo-sm" height="22">
                             </a>
                         </div>
 
@@ -139,18 +151,21 @@
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
+                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                aria-expanded="false">
                                 <i class="mdi mdi-magnify font-size-24"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-menu-end dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="search" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
 
 
-                        <li class="dropdown d-none d-md-inline-block">
+                        {{-- <li class="dropdown d-none d-md-inline-block">
                             <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{{ 'bashboard' }}/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="18">
                             </a>
@@ -177,10 +192,12 @@
                                 </a>
 
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
+                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                aria-expanded="false">
                                 <i class="mdi mdi-bell font-size-24"></i>
                                 <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
                             </a>
@@ -191,7 +208,8 @@
                                             <h6 class="m-0 font-size-16 fw-semibold"> Notification</h6>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                            <a href="javascript: void(0);"
+                                                class="text-dark text-decoration-underline">
                                                 <small>Clear All</small>
                                             </a>
                                         </div>
@@ -203,9 +221,11 @@
                                     <h5 class="text-muted font-size-13 fw-normal mt-2">Today</h5>
                                     <!-- item-->
 
-                                    <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
                                         <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                            <span class="float-end noti-close-btn text-muted"><i
+                                                    class="mdi mdi-close"></i></span>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
                                                     <div class="notify-icon bg-primary">
@@ -213,17 +233,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-size-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                    <h5 class="noti-item-title fw-semibold font-size-14">Datacorp
+                                                        <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar
+                                                        commented on Admin</small>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
                                         <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                            <span class="float-end noti-close-btn text-muted"><i
+                                                    class="mdi mdi-close"></i></span>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
                                                     <div class="notify-icon bg-info">
@@ -231,8 +255,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-size-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">New user registered</small>
+                                                    <h5 class="noti-item-title fw-semibold font-size-14">Admin <small
+                                                            class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">New user
+                                                        registered</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -241,18 +267,23 @@
                                     <h5 class="text-muted font-size-13 fw-normal mt-0">Yesterday</h5>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
                                         <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                            <span class="float-end noti-close-btn text-muted"><i
+                                                    class="mdi mdi-close"></i></span>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
                                                     <div class="notify-icon">
-                                                        <img src="{{ 'bashboard' }}/assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                        <img src="{{ 'bashboard' }}/assets/images/users/avatar-2.jpg"
+                                                            class="img-fluid rounded-circle" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-size-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                    <h5 class="noti-item-title fw-semibold font-size-14">Cristina Pride
+                                                        <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What
+                                                        about our next meeting</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -261,9 +292,11 @@
                                     <h5 class="text-muted font-size-13 fw-normal mt-0">30 Dec 2021</h5>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
                                         <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                            <span class="float-end noti-close-btn text-muted"><i
+                                                    class="mdi mdi-close"></i></span>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
                                                     <div class="notify-icon bg-primary">
@@ -272,25 +305,31 @@
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
                                                     <h5 class="noti-item-title fw-semibold font-size-14">Datacorp</h5>
-                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar
+                                                        commented on Admin</small>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
                                         <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                            <span class="float-end noti-close-btn text-muted"><i
+                                                    class="mdi mdi-close"></i></span>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
                                                     <div class="notify-icon">
-                                                        <img src="{{ 'bashboard' }}/assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                        <img src="{{ 'bashboard' }}/assets/images/users/avatar-4.jpg"
+                                                            class="img-fluid rounded-circle" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-size-14">Karen Robinson</h5>
-                                                    <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                    <h5 class="noti-item-title fw-semibold font-size-14">Karen Robinson
+                                                    </h5>
+                                                    <small class="noti-item-subtitle text-muted">Wow ! this admin looks
+                                                        good and awesome design</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -302,7 +341,8 @@
                                 </div>
 
                                 <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
                                     View All
                                 </a>
 
@@ -314,21 +354,20 @@
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                aria-expanded="false">
                                 @if (auth()->user()->image == 'default.jpg')
-                                <img src="{{ asset('uploads/default') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
-
+                                    <img src="{{ asset('uploads/default') }}/{{ auth()->user()->image }}"
+                                        alt="user-image" class="rounded-circle">
                                 @else
-                                <img src="{{ asset('uploads/profile') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
-
+                                    <img src="{{ asset('uploads/profile') }}/{{ auth()->user()->image }}"
+                                        alt="user-image" class="rounded-circle">
                                 @endif
-
-                                <span class="ms-1 d-none d-md-inline-block">{{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
+                                <span class="ms-1 d-none d-md-inline-block">
+                                    {{ Auth::user()->name }}. <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
-
-
-
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-header noti-title">
@@ -385,12 +424,12 @@
                                 <h4 class="page-title mb-0">Dashboard</h4>
                             </div>
                             <div class="col-lg-6">
-                               <div class="d-none d-lg-block">
-                                <ol class="breadcrumb m-0 float-end">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashtrap</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
-                                </ol>
-                               </div>
+                                <div class="d-none d-lg-block">
+                                    <ol class="breadcrumb m-0 float-end">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashtrap</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -399,66 +438,71 @@
 
 
 
-                        @yield('contant')
+                    @yield('contant')
 
 
 
-</div> <!-- container -->
+                </div> <!-- container -->
 
-</div> <!-- content -->
+            </div> <!-- content -->
 
-<!-- Footer Start -->
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div><script>document.write(new Date().getFullYear())</script> © Dashtrap</div>
-            </div>
-            <div class="col-md-6">
-                <div class="d-none d-md-flex gap-4 align-item-center justify-content-md-end">
-                    <p class="mb-0">Design & Develop by <a href="https://myrathemes.com/" target="_blank">MyraStudio</a> </p>
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> © Dashtrap
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-none d-md-flex gap-4 align-item-center justify-content-md-end">
+                                <p class="mb-0">Design & Develop by <a href="https://myrathemes.com/"
+                                        target="_blank">MyraStudio</a> </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </footer>
+            <!-- end Footer -->
+
         </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
     </div>
-</footer>
-<!-- end Footer -->
+    <!-- END wrapper -->
 
-</div>
+    <!-- App js -->
+    <script src="{{ 'bashboard' }}/assets/js/vendor.min.js"></script>
+    <script src="{{ 'bashboard' }}/assets/js/app.js"></script>
 
-<!-- ============================================================== -->
-<!-- End Page content -->
-<!-- ============================================================== -->
+    <!-- Knob charts js -->
+    <script src="{{ 'bashboard' }}/assets/libs/jquery-knob/jquery.knob.min.js"></script>
 
-</div>
-<!-- END wrapper -->
+    <!-- Sparkline Js-->
+    <script src="{{ 'bashboard' }}/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-<!-- App js -->
-<script src="{{ 'bashboard' }}/assets/js/vendor.min.js"></script>
-<script src="{{ 'bashboard' }}/assets/js/app.js"></script>
+    <script src="{{ 'bashboard' }}/assets/libs/morris.js/morris.min.js"></script>
 
-<!-- Knob charts js -->
-<script src="{{ 'bashboard' }}/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="{{ 'bashboard' }}/assets/libs/raphael/raphael.min.js"></script>
 
-<!-- Sparkline Js-->
-<script src="{{ 'bashboard' }}/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- Dashboard init-->
+    <script src="{{ 'bashboard' }}/assets/js/pages/dashboard.js"></script>
 
-<script src="{{ 'bashboard' }}/assets/libs/morris.js/morris.min.js"></script>
+    {{-- swwet alart --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-<script src="{{ 'bashboard' }}/assets/libs/raphael/raphael.min.js"></script>
-
-<!-- Dashboard init-->
-<script src="{{ 'bashboard' }}/assets/js/pages/dashboard.js"></script>
-
-   {{-- swwet alart --}}
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-   @yield('script')
+    @yield('script')
 
 </body>
 
 
 <!-- Mirrored from myrathemes.com/dashtrap/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Mar 2024 03:40:30 GMT -->
-</html>
 
+</html>

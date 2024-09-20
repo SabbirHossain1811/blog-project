@@ -14,15 +14,20 @@ Auth::routes(['register' => false]);
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// profile session start
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('profile/name/update', [ProfileController::class, 'name_update'])->name('profile.username');
+Route::post('profile/email/update', [ProfileController::class, 'email_update'])->name('profile.useremail');
+Route::post('profile/password/update', [ProfileController::class, 'password_update'])->name('profile.password');
+Route::post('profile/image/update', [ProfileController::class, 'image_update'])->name('profile.image');
+
+// setting page start here......
 Route::get('setting', [NameController::class, 'setting_index'])->name('setting.index');
-Route::post('setting/name/update', [NameController::class, 'name_update'])->name('setting.username');
-Route::post('setting/email/update', [NameController::class, 'email_update'])->name('setting.useremail');
-Route::post('setting/password/update', [NameController::class, 'password_update'])->name('setting.password');
-Route::post('setting/image/update', [NameController::class, 'image_update'])->name('setting.image');
 
 
 // cetegory session start here......
 Route::get('/cetegory', [CetegoryController::class, 'index'])->name('cetegory.index');
 Route::post('/category/store',[CetegoryController::class,'store'])->name('category.store');
+// Route::get('/category/edit/{slug}',[CetegoryController::class,'edit'])->name('category.edit');
 
