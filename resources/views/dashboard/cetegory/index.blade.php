@@ -19,7 +19,7 @@
                         <tr>
                           <td>
                             <div class="d-flex align-items-center">
-                              <img  src="{{ asset('uploads/cetegory') }}/{{ $cetegorie->image }}" alt="" style="width: 45px; height: 45px" class="rounded-circle">
+                              <img  src="{{ asset('uploads/cetegory') }}/{{ $cetegorie->image }}" alt="" style="width: 45px; height: 45px; margin-left:10px;" class="rounded-circle">
                               <div class="ms-3">
                                 <p class="fw-bold mb-1">{{ $cetegorie->slug }}</p>
 
@@ -30,13 +30,18 @@
                             <p class="fw-normal mb-1">{{ $cetegorie->title }}</p>
                           </td>
                           <td>
-                            <span class="badge bg-success p-2   rounded-pill d-inline">Active</span>
+                            <form id="sabbirkharap{{ $cetegorie->id }}" action="{{ route('category.status',$cetegorie->id) }}" method="POST">
+                                @csrf
+                            <div class="form-check form-switch">
+                                <input onchange="document.querySelector('#sabbirkharap{{ $cetegorie->id }}').submit()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" {{ $cetegorie->status == 'active' ? 'checked' : '' }}>
+                              </div>
+                            </form>
                           </td>
                           <td>
-                            <a href="" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                            <a href="{{ route('category.edit',$cetegorie->slug) }}" class="btn btn-link btn-sm btn-rounded text-purple-900">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
-                            <a href="" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                            <a href="{{ route('category.destroy',$cetegorie->slug) }}" class="btn btn-link btn-sm btn-rounded text-purple-900">
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>
                           </td>
@@ -75,7 +80,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <img id="montrimosai"  src="{{ asset('uploads/default/404f.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain; margin-left:70px;">
+                        <img id="montrimosai"  src="{{ asset('uploads/default/deafulttt.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain; margin-left:10px;">
                     </div>
                     <div class="row mb-2">
                         <label for="inputPassword5" class="col-sm-3 col-form-label">Category Image</label>
@@ -113,7 +118,7 @@
   position: "right", // `left`, `center` or `right`
   stopOnFocus: true, // Prevents dismissing of toast on hover
   style: {
-    background: "linear-gradient(to right, #00b09b, #96c93d)",
+    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
   },
   onClick: function(){} // Callback after click
 }).showToast();

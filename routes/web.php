@@ -28,6 +28,9 @@ Route::get('setting', [NameController::class, 'setting_index'])->name('setting.i
 
 // cetegory session start here......
 Route::get('/cetegory', [CetegoryController::class, 'index'])->name('cetegory.index');
-Route::post('/category/store',[CetegoryController::class,'store'])->name('category.store');
-// Route::get('/category/edit/{slug}',[CetegoryController::class,'edit'])->name('category.edit');
+Route::post('/category/store', [CetegoryController::class, 'store'])->name('category.store');
+Route::get('/cetegory/edit/{slug}',[CetegoryController::class,'edit'])->name('category.edit');
+Route::post('/cetegory/update/{slug}',[CetegoryController::class,'update'])->name('category.update');
+Route::get('/cetegory/destroy/{slug}',[CetegoryController::class,'destroy'])->name('category.destroy');
+Route::post('/cetegory/status/{id}',[CetegoryController::class,'status'])->name('category.status');
 

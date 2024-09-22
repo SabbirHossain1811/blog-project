@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Cetegory extends Model
 {
     use HasFactory;
+
+    protected $guarded = [''];
 }

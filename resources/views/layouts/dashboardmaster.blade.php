@@ -234,7 +234,8 @@
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
                                                     <h5 class="noti-item-title fw-semibold font-size-14">Datacorp
-                                                        <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                        <small class="fw-normal text-muted ms-1">1 min ago</small>
+                                                    </h5>
                                                     <small class="noti-item-subtitle text-muted">Caleb Flakelar
                                                         commented on Admin</small>
                                                 </div>
@@ -281,7 +282,8 @@
                                                 </div>
                                                 <div class="flex-grow-1 text-truncate ms-2">
                                                     <h5 class="noti-item-title fw-semibold font-size-14">Cristina Pride
-                                                        <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                        <small class="fw-normal text-muted ms-1">1 day ago</small>
+                                                    </h5>
                                                     <small class="noti-item-subtitle text-muted">Hi, How are you? What
                                                         about our next meeting</small>
                                                 </div>
@@ -354,18 +356,14 @@
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
-                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 @if (auth()->user()->image == 'default.jpg')
-                                    <img src="{{ asset('uploads/default') }}/{{ auth()->user()->image }}"
-                                        alt="user-image" class="rounded-circle">
+                                <img src="{{ asset('update/default') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
                                 @else
-                                    <img src="{{ asset('uploads/profile') }}/{{ auth()->user()->image }}"
-                                        alt="user-image" class="rounded-circle">
+                                <img src="{{ asset('update/profile') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
                                 @endif
                                 <span class="ms-1 d-none d-md-inline-block">
-                                    {{ Auth::user()->name }}. <i class="mdi mdi-chevron-down"></i>
+                                 {{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -393,6 +391,7 @@
                                 </a>
 
                                 <div class="dropdown-divider"></div>
+
 
                                 <!-- item-->
                                 <form action="{{ route('logout') }} " method="POST">

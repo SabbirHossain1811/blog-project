@@ -12,13 +12,16 @@ use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
+use Illuminate\Support\Facades\Storage;
 class ProfileController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('dashboard.profile.index');
     }
-// name update session
-    public function name_update(Request $request){
+    // name update session
+    public function name_update(Request $request)
+    {
         $request->validate([
             'name' => 'required'
         ]);
@@ -29,56 +32,57 @@ class ProfileController extends Controller
         return back()->with(['name_update' => "Name update SussesFull.....!!"]);
     }
 
-        // email update session
-     public function email_update(Request $request){
-        $request ->validate([
+    // email update session
+    public function email_update(Request $request)
+    {
+        $request->validate([
             'email' => 'required'
         ]);
         User::find(Auth::user()->id)->update([
             'email' => $request->email,
             'update_at' => now()
         ]);
-        return back()-> with(['email_update' => "Email Update SussesFull....!!"]);
-}
+        return back()->with(['email_update' => "Email Update SussesFull....!!"]);
+    }
 
     // password update session
     public function password_update(Request $request)
-  {
-    $request->validate([
-      'c_password' => 'required',
-      'password' => 'required|min:8|confirmed',
-    ]);
-    if (Hash::check($request->c_password, auth()->user()->password)) {
-      User::find(Auth::user()->id)->update([
-        'password' => $request->password,
-        'updated_at' => now(),
+    {
+        $request->validate([
+            'c_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+        ]);
+        if (Hash::check($request->c_password, auth()->user()->password)) {
+            User::find(Auth::user()->id)->update([
+                'password' => $request->password,
+                'updated_at' => now(),
 
-      ]);
-      return back()->with(['password_update' => " password update SeccesFull...!!"]);
-    } else {
-      return back()->withErrors(['c_password' => "Current password dosen't match record"]);
+            ]);
+            return back()->with(['password_update' => " password update SeccesFull...!!"]);
+        } else {
+            return back()->withErrors(['c_password' => "Current password dosen't match record"]);
+        }
     }
-  }
 
-//   iamge update session
-public function image_update(Request $request)
-{
-  $manager = new ImageManager(new Driver());
-  $request->validate([
-    'image' => 'required|image',
-  ]);
+    //   iamge update session
+    public function image_update(Request $request)
+    {
+        $manager = new ImageManager(new Driver());
+        $request->validate([
+            'image' => 'required|image',
+        ]);
 
-  if ($request->hasFile('image')) {
-    $newname = auth()->id() . '-' . rand(1111, 9999) . '.' . $request->file('image')->getClientOriginalExtension();
-    $image = $manager->read($request->file('image'));
-    $image->toPng()->save(base_path('public/uploads/profile/'.$newname));
+        if ($request->hasFile('image')) {
+            $newname = auth()->id() . '-' . rand(1111, 9999) . '.' . $request->file('image')->getClientOriginalExtension();
+            $image = $manager->read($request->file('image'));
+            $image->toPng()->save(base_path('public/update/profile/' . $newname));
 
-    User::find(Auth::user()->id)->update([
-      'image' => $request->image,
-      'updated_at' => now(),
+            User::find(Auth::user()->id)->update([
+                'image' => $request->image,
+                'updated_at' => now(),
 
-    ]);
-    return redirect()->route('profile.index')->with('image_update',"Image update successfull");
-  }
-}
+            ]);
+            return redirect()->route('profile.index')->with('image_update', "Image update successfull");
+        }
+    }
 }

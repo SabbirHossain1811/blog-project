@@ -19,7 +19,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                     {{-- iamge update session --}}
                     <div class="col-lg-5">
-                        <div class="card">
+                        <div class="card dark:bg-gray-800">
                             <div class="card-body">
                                 <form action="{{ route('profile.image') }} " method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -30,29 +30,28 @@
                                             </h2>
                                         </header>
                                         <br>
-                                        <div style="display: flex; flex-direction:row;">
-                                            <img style="width: 130px; height:130px; object-fit:cover; border:4px solid white;"
-                                                src="{{ asset('uploads/default/default.jpg') }}" alt="user-image"
-                                                id="montrimosai" class="rounded-circle">
-                                            <div style="margin-left: 30px; margin-top:30px; font-weight:bold">
-                                                <span class="ms-1 d-none d-md-inline-block ">
-                                                  Name->  {{ Auth::user()->name }}
-                                                </span>
-                                                <br>
-                                                <br>
-                                                <span class="ms-1 d-none d-md-inline-block ">
-                                                  Email->  {{ Auth::user()->email }}
-                                                </span>
-                                            </div>
+
+                                        <div style=" width: 100px; height:100px; display: flex; flex-direction:row;">
+                                            @if  (auth()->user()->image == 'default.jpg')
+                                                <img style=" width:100%; height:100%;  object-fit:cover; border:4px solid rgb(41, 105, 102);"
+                                                    src="{{ asset('update/default') }}/{{ auth()->user()->image }}"
+                                                    alt="user-image" class="rounded-circle" id="showimage">
+                                            @else
+                                                <img style=" width:100%; height:100%;  object-fit:cover; border:4px solid rgb(41, 105, 102);" src="{{ asset('update/profile') }}/{{ auth()->user()->image }}"
+                                                    alt="user-image" class="rounded-circle" id="showimage">
+                                            @endif
+
+                                            <label style=" position: absolute; font-size:23px; left:65px; top:115px; font-size:17px;"
+                                                for="updat"><i
+                                                    style=" bottom:20px; left:90px;background-color:white; padding:5px;display:flex; align-items:center; color:black; border-radius:50%; border:4px solid rgb(46, 47, 49);"
+                                                    class="fa-solid fa-pen-to-square"></i></label>
+
                                         </div>
-                                        <label style="font-size:23px; margin-left:60px; " for="updat"><i
-                                                style="position: absolute; bottom:20px; left:90px;background-color:white; padding:5px;display:flex; align-items:center; color:black; border-radius:50%; border:4px solid rgb(46, 47, 49);"
-                                                class="fa-solid fa-pen-to-square"></i></label>
                                         <input id="updat" hidden style="border: 1px solid rgb(43, 112, 97);"
                                             value="{{ old('password') }}" type="file" name="image"
                                             class="form-control  @error('name') is-invalid @enderror"
                                             id="exampleInputEmail1" aria-describedby="emailHelp"
-                                            onchange="document.querySelector('#montrimosai').src = window.URL.createObjectURL(this.files[0])">
+                                            onchange="document.querySelector('#showimage').src = window.URL.createObjectURL(this.files[0])">
                                         @error('image')
                                             <p class="text-danger mt-2">
                                                 <strong>{{ $message }}</strong>
@@ -60,7 +59,7 @@
                                         @enderror
 
                                     </div>
-                                    <button style="background-color:rgb(75, 112, 235); border:none;" type="submit"
+                                    <button style="background-color:rgb(75, 112, 235); border:none; margin-top:10px;" type="submit"
                                         class="btn btn-primary col-12">Update</button>
                                 </form>
                             </div>
