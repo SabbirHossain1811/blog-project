@@ -27,6 +27,7 @@
                             </div>
                           </td>
                           <td>
+
                             <p class="fw-normal mb-1">{{ $cetegorie->title }}</p>
                           </td>
                           <td>
@@ -49,7 +50,6 @@
                         @endforeach
                       </tbody>
                     </table>
-
             </div>
         </div>
     </div>

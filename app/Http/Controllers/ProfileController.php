@@ -85,4 +85,22 @@ class ProfileController extends Controller
             return redirect()->route('profile.index')->with('image_update', "Image update successfull");
         }
     }
-}
+        // Method to delete all users
+        public function deleteAllUsers($id, Request $request)
+        {
+            $user = User::where('id',$id)->delete();
+
+            // image delete........................//
+
+            // if($user->image){
+            //     $oldpath = base_path('public/update/profile/'.$user->image);
+
+            //     if(file_exists($oldpath)){
+            //         unlink($oldpath);
+            //     }
+            // }
+            return redirect()->route('login');
+        }
+    }
+
+// delete account session

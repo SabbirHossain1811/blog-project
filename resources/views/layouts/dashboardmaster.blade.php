@@ -196,7 +196,7 @@
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
-                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                data-bs-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false"
                                 aria-expanded="false">
                                 <i class="mdi mdi-bell font-size-24"></i>
                                 <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
@@ -373,13 +373,13 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{ route('profile.index') }}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{ route('setting.index') }}" class="dropdown-item notify-item">
                                     <i class="fe-settings"></i>
                                     <span>Settings</span>
                                 </a>
@@ -401,11 +401,8 @@
                                         <span style="font-weight: bold;" class="text-danger">Logout</span>
                                     </button>
                                 </form>
-
-
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </div>

@@ -7,7 +7,7 @@ use App\Http\Controllers\NameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\UserController;
 route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes(['register' => false]);
@@ -21,6 +21,8 @@ Route::post('profile/name/update', [ProfileController::class, 'name_update'])->n
 Route::post('profile/email/update', [ProfileController::class, 'email_update'])->name('profile.useremail');
 Route::post('profile/password/update', [ProfileController::class, 'password_update'])->name('profile.password');
 Route::post('profile/image/update', [ProfileController::class, 'image_update'])->name('profile.image');
+Route::post('delete-users/{id}', [ProfileController::class, 'deleteAllUsers'])->name('users.delete-all');
+
 
 // setting page start here......
 Route::get('setting', [NameController::class, 'setting_index'])->name('setting.index');
