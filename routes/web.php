@@ -3,11 +3,13 @@
 use App\Http\Controllers\CetegoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\NameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
+
 route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes(['register' => false]);
@@ -24,6 +26,13 @@ Route::post('profile/image/update', [ProfileController::class, 'image_update'])-
 Route::post('delete-users/{id}', [ProfileController::class, 'deleteAllUsers'])->name('users.delete-all');
 
 
+
+// management sesson...........
+Route::get('/management', [ManagementController::class, 'index'])->name('management.index');
+Route::post('/management/user/register', [ManagementController::class, 'store_register'])->name('management.store'); //register session er jonno
+Route::post('/management/user/manager/down/{id}', [ManagementController::class, 'manager_down'])->name('management.down'); //role managenment korar jonno
+Route::post('/management/distroy/{id}', [ManagementController::class, 'manage_distory'])->name('manage_distory');//role managenment korar jonno
+
 // setting page start here......
 Route::get('setting', [NameController::class, 'setting_index'])->name('setting.index');
 
@@ -31,8 +40,7 @@ Route::get('setting', [NameController::class, 'setting_index'])->name('setting.i
 // cetegory session start here......
 Route::get('/cetegory', [CetegoryController::class, 'index'])->name('cetegory.index');
 Route::post('/category/store', [CetegoryController::class, 'store'])->name('category.store');
-Route::get('/cetegory/edit/{slug}',[CetegoryController::class,'edit'])->name('category.edit');
-Route::post('/cetegory/update/{slug}',[CetegoryController::class,'update'])->name('category.update');
-Route::get('/cetegory/destroy/{slug}',[CetegoryController::class,'destroy'])->name('category.destroy');
-Route::post('/cetegory/status/{id}',[CetegoryController::class,'status'])->name('category.status');
-
+Route::get('/cetegory/edit/{slug}', [CetegoryController::class, 'edit'])->name('category.edit');
+Route::post('/cetegory/update/{slug}', [CetegoryController::class, 'update'])->name('category.update');
+Route::get('/cetegory/destroy/{slug}', [CetegoryController::class, 'destroy'])->name('category.destroy');
+Route::post('/cetegory/status/{id}', [CetegoryController::class, 'status'])->name('category.status');

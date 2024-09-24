@@ -77,15 +77,16 @@ class ProfileController extends Controller
             $image = $manager->read($request->file('image'));
             $image->toPng()->save(base_path('public/update/profile/' . $newname));
 
-            User::find(Auth::user()->id)->update([
-                'image' => $request->image,
-                'updated_at' => now(),
+            User::find(auth()->id())->update([
+                'image' =>$newname,
+                'update_at' => now(),
 
             ]);
             return redirect()->route('profile.index')->with('image_update', "Image update successfull");
         }
     }
-        // Method to delete all users
+
+ // Method to delete all users
         public function deleteAllUsers($id, Request $request)
         {
             $user = User::where('id',$id)->delete();

@@ -69,8 +69,34 @@
                         </a>
                     </li>
 
-                    <li class="menu-title">Custom</li>
+                    {{-- role management sesssio start --}}
+                    @if (Auth::user()->role == "admin" || Auth::user()->role == "manager")
 
+                    <li class="menu-title">Management Role & Permission</li>
+                     <li class="menu-item">
+                         <a href="#menuRole" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                             <span class="menu-icon"><i class="bx bx-file"></i></span>
+                             <span class="menu-text"> Role & Permission </span>
+                             <span class="menu-arrow"></span>
+                         </a>
+                         <div class="collapse" id="menuRole">
+                             <ul class="sub-menu">
+                                 <li class="menu-item">
+                                     <a class='menu-link' href='{{ route('management.index') }}'>
+                                         <span class="menu-text">Assign Role & Register</span>
+                                     </a>
+                                 </li>
+                                 {{-- <li class="menu-item">
+                                     <a class='menu-link' href=''>
+                                         <span class="menu-text">Assign Existing Users Role</span>
+                                     </a>
+                                 </li> --}}
+                             </ul>
+                         </div>
+                     </li>
+                    @endif
+
+                    {{-- profile session start here --}}
                     <li class="menu-item">
                         <a class='menu-link waves-effect waves-light' href='{{ route('profile.index') }}'>
                             <span class="menu-icon"><i class="fa-solid fa-face-flushed"></i></span>
@@ -78,12 +104,14 @@
                         </a>
                     </li>
 
+                    {{-- setting session start --}}
                     <li class="menu-item">
                         <a class='menu-link waves-effect waves-light' href='{{ route('setting.index') }}'>
                             <span class="menu-icon"><i class="fa-solid fa-users-gear"></i></span>
                             <span class="menu-text">Settings</span>
                         </a>
                     </li>
+                    {{-- category session start --}}
                     <li class="menu-item">
                         <a href="#menuExpages" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                             <span class="menu-icon"><i class="fa-solid fa-layer-group"></i></span>

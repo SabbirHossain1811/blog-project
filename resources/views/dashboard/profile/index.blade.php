@@ -19,7 +19,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
 
                     {{-- iamge update session --}}
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 ">
                         <div class="card dark:bg-gray-800">
                             <div class="card-body">
                                 <form action="{{ route('profile.image') }} " method="POST" enctype="multipart/form-data">
