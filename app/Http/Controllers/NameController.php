@@ -11,79 +11,16 @@ class NameController extends Controller
 {
   public function setting_index()
   {
-    return view('dashboard.setting.index');
+    $users = user::all();
+    return view('dashboard.setting.index', compact('users'));
   }
 
-//   name update start here .,.....
-//   public function name_update(Request $request)
-//   {
-//     $old_Name = Auth::user()->name;
-//     $request->validate([
-//       'name' => 'required',
+  public function user_destroy($id){
+    $user = User::where('id',$id)->first();
 
-//     ]);
-//     User::find(Auth::user()->id)->update([
-//       'name' => $request->name,
-//       'updated_at' => now(),
-//     ]);
-
-//     return back()->with('name_update', "Name Update Success $old_Name ..!!");
-//   }
-
-//   //   email update start here..........
-//   public function email_update(Request $request)
-//   {
-
-//     $request->validate([
-//       'email' => 'required'
-//     ]);
-//     User::find(Auth::user()->id)->update([
-//       'email' => $request->email,
-//       'updated_at' => now(),
-//     ]);
-//     return back()->with('email_update', "Email Update SuccessFull..!!");;
-//   }
-
-  //   password update start here..........
-//   public function password_update(Request $request)
-//   {
-//     $request->validate([
-//       'c_password' => 'required',
-//       'password' => 'required|min:8|confirmed',
-//     ]);
-//     if (Hash::check($request->c_password, auth()->user()->password)) {
-//       User::find(Auth::user()->id)->update([
-//         'password' => $request->password,
-//         'updated_at' => now(),
-
-//       ]);
-//       return back()->with(['password_update' => " password update SeccesFull...!!"]);
-//     } else {
-//       return back()->withErrors(['c_password' => "Current password dosen't match record"]);
-//     }
-//   }
+    User::find($user->id)->delete();
+    return redirect()->route('setting.index')->with('cat_success' , "User Delete Successfull");
 
 
-//   image update start here..........
-//   public function image_update(Request $request)
-//   {
-//     $manager = new ImageManager(new Driver());
-//     $request->validate([
-//       'image' => 'required|image',
-//     ]);
-
-//     if ($request->hasFile('image')) {
-//       $newname = auth()->id() . '-' . rand(1111, 9999) . '.' . $request->file('image')->getClientOriginalExtension();
-//       $image = $manager->read($request->file('image'));
-//       $image->toPng()->save(base_path('public/uploads/profile/'.$newname));
-
-//       User::find(Auth::user()->id)->update([
-//         'image' => $request->image,
-//         'updated_at' => now(),
-
-//       ]);
-//       return redirect()->route('setting.index')->with('image_update',"Image update successfull");
-//     }
-//   }
 }
-
+}

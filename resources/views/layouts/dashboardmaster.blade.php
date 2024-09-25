@@ -108,7 +108,7 @@
                     <li class="menu-item">
                         <a class='menu-link waves-effect waves-light' href='{{ route('setting.index') }}'>
                             <span class="menu-icon"><i class="fa-solid fa-users-gear"></i></span>
-                            <span class="menu-text">Settings</span>
+                            <span class="menu-text">View User</span>
                         </a>
                     </li>
                     {{-- category session start --}}
@@ -407,7 +407,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="{{ route('setting.index') }}" class="dropdown-item notify-item">
+                                <a href="javascript:void(0)" class="dropdown-item notify-item">
                                     <i class="fe-settings"></i>
                                     <span>Settings</span>
                                 </a>

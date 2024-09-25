@@ -38,11 +38,11 @@
                               </div>
                             </form>
                           </td>
-                          <td>
-                            <a href="{{ route('category.edit',$cetegorie->slug) }}" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                          <td class="">
+                            <a href="{{ route('category.edit',$cetegorie->slug) }}" class="btn btn-info btn-sm text-black font-bold ">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
-                            <a href="{{ route('category.destroy',$cetegorie->slug) }}" class="btn btn-link btn-sm btn-rounded text-purple-900">
+                            <a href="{{ route('category.destroy',$cetegorie->slug) }}" class="btn btn-danger btn-sm text-white font-bold">
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>
                           </td>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <img id="montrimosai"  src="{{ asset('uploads/default/deafulttt.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain; margin-left:10px;">
+                        <img id="montrimosai"  src="{{ asset('uploads/default/deafulttt.jpg') }}" alt="" style="width:100%; height:300px; object-fit:contain; margin-left:50px;">
                     </div>
                     <div class="row mb-2">
                         <label for="inputPassword5" class="col-sm-3 col-form-label">Category Image</label>

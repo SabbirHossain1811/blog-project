@@ -31,10 +31,12 @@ Route::post('delete-users/{id}', [ProfileController::class, 'deleteAllUsers'])->
 Route::get('/management', [ManagementController::class, 'index'])->name('management.index');
 Route::post('/management/user/register', [ManagementController::class, 'store_register'])->name('management.store'); //register session er jonno
 Route::post('/management/user/manager/down/{id}', [ManagementController::class, 'manager_down'])->name('management.down'); //role managenment korar jonno
-Route::post('/management/distroy/{id}', [ManagementController::class, 'manage_distory'])->name('manage_distory');//role managenment korar jonno
+//role managenment korar jonno
 
 // setting page start here......
 Route::get('setting', [NameController::class, 'setting_index'])->name('setting.index');
+Route::get('/user/destroy/{id}', [NameController::class, 'user_destroy'])->name('user_destroy');
+
 
 
 // cetegory session start here......

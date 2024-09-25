@@ -95,23 +95,18 @@
                                         </td>
                                         @if (Auth::user()->role == "admin")
                                         <td>
-                                            <form id="sabbir{{ $manager->id }}"
-                                                action="{{ route('management.down', $manager->id) }}" method="POST">
+                                            <form id="herouser{{ $manager->id }}" action="{{ route('management.down',$manager->id) }}" method="POST">
                                                 @csrf
                                                 <div class="form-check form-switch">
-                                                    <input
-                                                        onchange="document.querySelector('#sabbir{{ $manager->id }}').submit()"
-                                                        class="form-check-input" type="checkbox" role="switch"
-                                                        id="flexSwitchCheckChecked"
-                                                        {{ $manager->role == $manager->role ? 'checked' : '' }}>
+                                                    <input onchange="document.querySelector('#herouser{{ $manager->id }}').submit()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" {{ $manager->role == $manager->role ? 'checked' : '' }}>
                                                 </div>
                                             </form>
-                                        </td>
+                                            </td>
                                         <td class="d-flex gap-2 ">
                                             <a href="" class="btn btn-info btn-sm">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <a href="{{ route('manage_distory',["id"=>$manager->id])}}" class="btn btn-danger btn-sm">
+                                            <a href="" class="btn btn-danger btn-sm">
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
                                         </td>

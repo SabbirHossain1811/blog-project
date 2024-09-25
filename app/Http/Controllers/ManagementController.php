@@ -30,29 +30,32 @@ class ManagementController extends Controller
             'password' => $request->password,
             'role' => $request->role,
         ]);
+        return back()->with('store_register' , "User Create  Complete...!!");
     }
 
 
     // acctiv  deactive session here.
-    public function manager_down($id)
-    {
-        $managers = User::where('id', $id)->first();
+    public function manager_down($id){
+        $manager = User::where('id',$id)->first();
 
 
-        if ($managers->role == 'manager') {
-            User::find($managers->id)->update([
+        if($manager->role == 'manager'){
+            User::find($manager->id)->update([
                 'role' => 'user',
                 'updated_at' => now(),
             ]);
-            return back()->with('management.index', "Manager Demotion Seccsfull...");
+            return back()->with('register_complete' , "Manager Demotion Successfull");
+
         }
     }
 
-     // delete session start here
-     public function manage_distory($id){
-        $managers = User::where('id',$id)->first();
-        User::find($managers->id)->delete();
-        return back()->with('management.index' , "Management Delete Successfull...");
 
-    }
+     // delete session start here
+    //  public function manage_distory($id){
+    //     $managers = User::where('id',$id)->first();
+    //     User::find($managers->id)->delete();
+    //     return back()->with('management.index' , "Management Delete Successfull...");
+
+    // }
+
 }
