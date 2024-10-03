@@ -23,4 +23,8 @@ class NameController extends Controller
 
 
 }
+
+public function problem_index(){
+    return view('dashboard.probelm.index');
+}
 }

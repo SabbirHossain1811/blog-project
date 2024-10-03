@@ -43,7 +43,7 @@
                     </table>
                     @else
                     <p class="font-bold"> Hey Mr : <b>{{ Auth::user()->name }}</b></p>
-                     <h3 style="color:rgb(44, 168, 218); font-weight: bold" class="">Thank You For Comeing My Setting Page..!!</h3>
+                     <h3 style="color:rgb(44, 168, 218); font-weight: bold" class="">Thank You For Comeing My User View Page..!!</h3>
                     @endif
                 </div>
             </div>

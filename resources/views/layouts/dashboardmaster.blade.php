@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="{{ 'bashboard' }}/assets/images/favicon.ico">
 
     <link href="{{ 'bashboard' }}/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
-
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
     <!-- App css -->
     <link href="{{ 'bashboard' }}/assets/css/style.min.css" rel="stylesheet" type="text/css">
@@ -86,11 +86,11 @@
                                          <span class="menu-text">Assign Role & Register</span>
                                      </a>
                                  </li>
-                                 {{-- <li class="menu-item">
-                                     <a class='menu-link' href=''>
+                                 <li class="menu-item">
+                                     <a class='menu-link' href='{{ route('role_session') }}'>
                                          <span class="menu-text">Assign Existing Users Role</span>
                                      </a>
-                                 </li> --}}
+                                 </li>
                              </ul>
                          </div>
                      </li>
@@ -521,6 +521,7 @@
     {{-- swwet alart --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> --}}
 
     @yield('script')
 

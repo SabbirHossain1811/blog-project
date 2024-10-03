@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Sessionllers;
-
+use Illuminate\Support\Str;
 
 
 class ManagementController extends Controller
@@ -49,13 +49,30 @@ class ManagementController extends Controller
         }
     }
 
+// manager delete session
+    public function manager_delete($id,)
+    {
+        $manager = User::find($id);
+        if ($manager) {
+            $manager->delete();
+            return redirect()->route('management.index')->with('store_register', "Manager Delete Successful");
+        }
+        return redirect()->route('management.index')->with('store_register', "Manager not found");
+    }
 
-     // delete session start here
-    //  public function manage_distory($id){
-    //     $managers = User::where('id',$id)->first();
-    //     User::find($managers->id)->delete();
-    //     return back()->with('management.index' , "Management Delete Successfull...");
 
-    // }
+    // manager edit session
+   // manager update session
+ public function edit($id){
+// $manager = User::where('id',$id)->first();
 
+return view('dashboard.management.auth.edit'
+
+ );
 }
+//   role
+public function role_index(){
+    return view('dashboard.management.role.role');
+}
+}
+
