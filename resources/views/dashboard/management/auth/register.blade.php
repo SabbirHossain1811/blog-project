@@ -12,7 +12,7 @@
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-3 col-form-label"> Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control border-info-subtle" id="inputEmail3"
+                                <input type="text" class="form-control " id="inputEmail3"
                                     placeholder="name " name="name">
                                 @error('name')
                                     <p class="text-danger mt-2">{{ $message }}</p>
@@ -22,7 +22,7 @@
                         <div class="row mb-3">
                             <label for="inputPassword3" class="col-sm-3 col-form-label"> Email</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control border-info-subtle" id="inputPassword3"
+                                <input type="text" class="form-control " id="inputPassword3"
                                     placeholder="email" name="email">
                                 @error('email')
                                     <p class="text-danger mt-2">{{ $message }}</p>
@@ -32,7 +32,7 @@
                         <div class="row mb-2">
                             <label for="inputPassword5" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control border-info-subtle" id="inputPassword5"
+                                <input type="password" class="form-control " id="inputPassword5"
                                     placeholder="password" name="password">
                                 @error('password')
                                     <p class="text-danger mt-2">{{ $message }}</p>
@@ -134,59 +134,66 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mt-3">
+                    @foreach ($managers as $manager)
                     <!-- Form content goes here -->
-                    <form role="form" action="{{ route('management.store') }}" method="POST" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('management.update',$manager->id) }}" method="POST">
                         @csrf
+                        <!-- Name -->
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-3 col-form-label"> Name</label>
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control border-info-subtle" id="inputEmail3"
-                                    placeholder="name " name="name">
+                                <input type="text" class="form-control border-info-subtle" id="inputEmail3" placeholder="name" name="name" value="{{ $manager->name }}">
                                 @error('name')
                                     <p class="text-danger mt-2">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
+
+                        <!-- Email -->
                         <div class="row mb-3">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label"> Email</label>
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control border-info-subtle" id="inputPassword3"
-                                    placeholder="email" name="email">
+                                <input type="text" class="form-control border-info-subtle" id="inputPassword3" placeholder="email" name="email" value="{{ $manager->email }}">
                                 @error('email')
                                     <p class="text-danger mt-2">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
+
+                        <!-- Password -->
                         <div class="row mb-2">
                             <label for="inputPassword5" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control border-info-subtle" id="inputPassword5"
-                                    placeholder="password" name="password">
+                                <input type="password" class="form-control border-info-subtle" id="inputPassword5" placeholder="password" name="password" value="{{ $manager->password }}">
                                 @error('password')
                                     <p class="text-danger mt-2">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
+
+                        <!-- Role -->
                         <div class="row mb-2">
-                            <label for="inputPassword5" class="col-sm-3 col-form-label ">Role</label>
-                            <div class="col-sm-9">
-                                <select class="form-select border-info-subtle" name="role">
+                            <label for="inputPassword5" class="col-sm-3 col-form-label">Role</label>
+                             <div class="col-sm-9">
+                                <select class="form-select border-info-subtle" name="role" >
                                     <option value="">select roles</option>
-                                    <option value="manager">Manager</option>
-                                    <option value="blogger">Blogger</option>
-                                    <option value="user">User</option>
+                                    <option value="manager" {{ $manager->role == 'manager' ? 'selected' : '' }}>Manager</option>
+                                    <option value="blogger" {{ $manager->role == 'blogger' ? 'selected' : '' }}>Blogger</option>
+                                    <option value="user" {{ $manager->role == 'user' ? 'selected' : '' }}>User</option>
                                 </select>
                                 @error('role')
                                     <p class="text-danger mt-2">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
+
                         <div class="justify-content-end row">
                             <div class="col-sm-9">
-                                <button type="submit" class="btn btn-info waves-effect waves-light col-2 mt-3">Sign In</button>
+                                <button type="submit" class="btn btn-info waves-effect waves-light col-2 mt-3">Create</button>
                             </div>
                         </div>
                     </form>
+                    @endforeach
                 </div>
             </div>
         </div>

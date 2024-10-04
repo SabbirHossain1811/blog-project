@@ -34,12 +34,16 @@ Route::middleware(['roleChek'])->group(function(){
     Route::post('/management/user/register', [ManagementController::class, 'store_register'])->name('management.store'); //register session er jonno
     Route::post('/management/user/manager/down/{id}', [ManagementController::class, 'manager_down'])->name('management.down'); //role managenment korar jonno
     Route::get('/management/user/manager/delete/{id}', [ManagementController::class, 'manager_delete'])->name('management.delete');
+    Route::post('/management/edit/update/{id}', [ManagementController::class, 'update'])->name('management.update');
 
     // role
     Route::get('role',[ManagementController::class, 'role_index'])->name('role_session');
+    Route::post('manage/role/assing',[ManagementController::class, 'role_assing'])->name('role_assing_session');
+    Route::post('/management/role/undo/blogger/{id}', [ManagementController::class, 'blogger_grade_down'])->name('management.role.blogger.down');
+    Route::post('/management/role/undo/user/{id}', [ManagementController::class, 'user_grade_down'])->name('management.role.user.down');
 });
 
-// Route::get('/management/user/manager/edit/{id}', [ManagementController::class, 'edit'])->name('management.edit'); //role managenment korar jonno
+
 
 
 // setting page start here......

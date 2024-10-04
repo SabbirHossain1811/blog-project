@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Sessionllers;
 use Illuminate\Support\Str;
@@ -32,8 +33,6 @@ class ManagementController extends Controller
         ]);
         return back()->with('store_register' , "User Create  Complete...!!");
     }
-
-
     // acctiv  deactive session here.
     public function manager_down($id){
         $manager = User::where('id',$id)->first();
@@ -61,18 +60,98 @@ class ManagementController extends Controller
     }
 
 
-    // manager edit session
-   // manager update session
- public function edit($id){
-// $manager = User::where('id',$id)->first();
+    // manager update.
+    public function update(Request $request, $id) {
+        // Validate the request data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'role' => 'required',
+            'password' => 'nullable|min:8',  // password is optional, min length of 8 if provided
+        ]);
 
-return view('dashboard.management.auth.edit'
+        // Find the user by ID
+        $manager = User::find($id);
 
- );
-}
-//   role
+        if ($manager) {
+            // Update the name, email, and role
+            $manager->name = $request->name;
+            $manager->email = $request->email;
+            $manager->role = $request->role;
+
+            // Update the password only if provided
+            if ($request->password) {
+                $manager->password = bcrypt($request->password);  // Ensure password is hashed
+            }
+
+            // Save the updated user data
+            $manager->save();
+
+            return redirect()->route('management.index', $manager->id)->with('store_register', 'Role & User updated successfully!');
+        } else {
+            return redirect()->back()->with('error', 'User not found!');
+        }
+    }
+
+//   role session
 public function role_index(){
-    return view('dashboard.management.role.role');
+
+    $bloggers = user::where('role','blogger')->get();
+    $users = user::where('role','user')->where('block',false)->get();
+    return view('dashboard.management.role.role',[
+        'manage' => $users,
+        'bloggers' => $bloggers,
+    ]);
 }
+public function role_assing(Request $request){
+
+    $request->validate([
+        'role' => 'required|in:manager,blogger,user',
+    ]);
+
+    $user = User::where('id',$request->user_id)->first();
+
+    User::find($user->id)->update([
+        'role' => $request->role,
+        'updated_at' => now(),
+    ]);
+
+session()->flash('assignrole','Role Assign Successfull');
+
+    return back();
+
+}
+
+// blogger dwon session.
+public function blogger_grade_down($id){
+    $user = User::where('id',$id)->first();
+
+    if($user->role == 'blogger'){
+        User::find($user->id)->update([
+            'role' => 'user',
+            'updated_at' => now(),
+        ]);
+        Session()->flash('assignrole','Role Down Successfull');
+
+        return back();
+    }
+}
+
+
+public function user_grade_down($id){
+    $user = User::where('id',$id)->first();
+
+
+    if($user->role == 'user'){
+        User::find($user->id)->update([
+            'block' => true,
+            'updated_at' => now(),
+        ]);
+        Session()->flash('assignrole','Block This User Successfull');
+
+        return back();
+    }
+}
+
 }
 
