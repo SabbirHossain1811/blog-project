@@ -97,7 +97,7 @@
                                             <a href="" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#categoryModal">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <a href="{{ route('management.delete',$user->id) }}" class="btn btn-outline-danger waves-effect waves-light">
+                                            <a href="{{ route('management.user.delete',$user->id) }}" class="btn btn-outline-danger waves-effect waves-light">
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
                                         </td>
@@ -160,7 +160,7 @@
                                             <a href="" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#categoryModal">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <a href="{{ route('management.delete',$blogger->id) }}" class="btn btn-outline-danger waves-effect waves-light">
+                                            <a href="{{ route('management.blogger.delete',$blogger->id) }}" class="btn btn-outline-danger waves-effect waves-light">
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
                                         </td>

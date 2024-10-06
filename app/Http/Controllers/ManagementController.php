@@ -153,5 +153,24 @@ public function user_grade_down($id){
     }
 }
 
+public function user_delete($id,)
+{
+    $user = User::find($id);
+    if ($user) {
+        $user->delete();
+        return redirect()->route('role_session')->with('store_register', "user Delete Successful");
+    }
+    return redirect()->route('role_session')->with('store_register', "Manager not found");
+}
+
+public function  blogger_delete($id){
+  $blogger = user::find($id);
+  if($blogger){
+    $blogger->delete();
+    return redirect()->route('role_session')->with('store_register', "blogger Delete Successful");
+}
+return redirect()->route('role_session')->with('store_register', "Manager not found");
+
+}
 }
 

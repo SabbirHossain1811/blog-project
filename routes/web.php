@@ -40,7 +40,9 @@ Route::middleware(['roleChek'])->group(function(){
     Route::get('role',[ManagementController::class, 'role_index'])->name('role_session');
     Route::post('manage/role/assing',[ManagementController::class, 'role_assing'])->name('role_assing_session');
     Route::post('/management/role/undo/blogger/{id}', [ManagementController::class, 'blogger_grade_down'])->name('management.role.blogger.down');
+    Route::get('/management/role/blogger/delete/{id}', [ManagementController::class, 'blogger_delete'])->name('management.blogger.delete');
     Route::post('/management/role/undo/user/{id}', [ManagementController::class, 'user_grade_down'])->name('management.role.user.down');
+    Route::get('/management/role/undo/delete/{id}', [ManagementController::class, 'user_delete'])->name('management.user.delete');
 });
 
 
