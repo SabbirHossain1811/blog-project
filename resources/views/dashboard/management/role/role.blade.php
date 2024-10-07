@@ -1,5 +1,9 @@
 @extends('layouts.dashboardmaster')
+@section('title')
+Exists & User Role Management's  Page
+@endsection
 @section('contant')
+<x-breadcum  sabbir="Exists & User Role Management's  Page"></x-breadcum>
 <div class="col-lg-12 ">
     <div class="card">
         <div class="card-body">

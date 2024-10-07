@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CetegoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
@@ -25,8 +26,6 @@ Route::post('profile/password/update', [ProfileController::class, 'password_upda
 Route::post('profile/image/update', [ProfileController::class, 'image_update'])->name('profile.image');
 Route::post('delete-users/{id}', [ProfileController::class, 'deleteAllUsers'])->name('users.delete-all');
 
-
-
 // management sesson...........
 Route::middleware(['roleChek'])->group(function(){
 
@@ -45,14 +44,9 @@ Route::middleware(['roleChek'])->group(function(){
     Route::get('/management/role/undo/delete/{id}', [ManagementController::class, 'user_delete'])->name('management.user.delete');
 });
 
-
-
-
 // setting page start here......
 Route::get('setting', [NameController::class, 'setting_index'])->name('setting.index');
 Route::get('/user/destroy/{id}', [NameController::class, 'user_destroy'])->name('user_destroy');
-
-
 
 // cetegory session start here......
 Route::get('/cetegory', [CetegoryController::class, 'index'])->name('cetegory.index');
@@ -62,3 +56,5 @@ Route::post('/cetegory/status/{id}', [CetegoryController::class, 'status'])->nam
 
 
 // problem solve
+Route::resource('/blog',BlogController::class);
+Route::get('create', [BlogController::class, 'create_blog'])->name('blog_create');

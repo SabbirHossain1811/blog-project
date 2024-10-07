@@ -1,8 +1,10 @@
 
 @extends('layouts.dashboardmaster')
-
+@section('title')
+Home Page's
+@endsection
 @section('contant')
-
+<x-breadcum  sabbir="Home Page"></x-breadcum>
 <div class="row">
     <div class="col-xl-12">
 

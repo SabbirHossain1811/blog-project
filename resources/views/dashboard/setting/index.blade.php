@@ -1,7 +1,9 @@
 @extends('layouts.dashboardmaster')
-
+@section('title')
+User Page's
+@endsection
 @section('contant')
-
+<x-breadcum  sabbir="User's  Page"></x-breadcum>
     {{-- name --}}
     <div style="margin-top: 50px" class="row ">
         <div class="col-lg-12">

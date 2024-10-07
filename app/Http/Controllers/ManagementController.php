@@ -153,21 +153,23 @@ public function user_grade_down($id){
     }
 }
 
+// user delete her.
 public function user_delete($id,)
 {
     $user = User::find($id);
     if ($user) {
         $user->delete();
-        return redirect()->route('role_session')->with('store_register', "user Delete Successful");
+        return redirect()->route('role_session')->with('assignrole', "user Delete Successful");
     }
-    return redirect()->route('role_session')->with('store_register', "Manager not found");
+    return redirect()->route('role_session')->with('assignrole', "Manager not found");
 }
 
+// blogger delete here,
 public function  blogger_delete($id){
   $blogger = user::find($id);
   if($blogger){
     $blogger->delete();
-    return redirect()->route('role_session')->with('store_register', "blogger Delete Successful");
+    return redirect()->route('role_session')->with('assignrole', "blogger Delete Successful");
 }
 return redirect()->route('role_session')->with('store_register', "Manager not found");
 

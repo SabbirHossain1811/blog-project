@@ -1,6 +1,9 @@
 @extends('layouts.dashboardmaster')
-
+@section('title')
+Profile Page's
+@endsection
 @section('contant')
+<x-breadcum  sabbir="Profile Page"></x-breadcum>
     <!DOCTYPE html>
     <html lang="en">
 

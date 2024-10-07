@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard </title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Myra Studio" name="author" />
@@ -123,6 +123,29 @@
                                 <li class="menu-item">
                                     <a class='menu-link' href='{{ route('cetegory.index') }}'>
                                         <span class="menu-text">Show Categories</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    {{-- blog page start here.? --}}
+                    <li class="menu-item">
+                        <a href="#menublog" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="fa-solid fa-layer-group"></i></span>
+                            <span class="menu-text"> Blogs </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="menublog">
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a class='menu-link' href='{{ route('blog.index') }}'>
+                                        <span class="menu-text">Blogs Show </span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class='menu-link' href='{{ route('blog_create') }}'>
+                                        <span class="menu-text">Blogs Create </span>
                                     </a>
                                 </li>
                             </ul>
@@ -442,21 +465,7 @@
                 <div class="container-fluid">
 
                     <!-- start page title -->
-                    <div class="py-3 py-lg-4">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="page-title mb-0">Dashboard</h4>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-none d-lg-block">
-                                    <ol class="breadcrumb m-0 float-end">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashtrap</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- end page title -->
 
 

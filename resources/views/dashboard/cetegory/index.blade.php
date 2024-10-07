@@ -1,6 +1,9 @@
 @extends('layouts.dashboardmaster')
-
+@section('title')
+Cetegry Page's
+@endsection
 @section('contant')
+<x-breadcum  sabbir="Cetegory's  Page"></x-breadcum>
     <div class="row">
         <div class="col-lg-7">
             <div class="card">
@@ -63,8 +66,7 @@
 
 
 
-
-        <div class="col-lg-5">
+<div class="col-lg-5">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-3">Category Insert</h4>
@@ -113,6 +115,7 @@
                 </div>
             </div>
         </div>
+
 
 
 <!-- Modal Structure -->
