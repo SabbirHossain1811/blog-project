@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\blog;
+use App\Models\Blog;
+use App\Http\Requests\StoreBlogRequest;
+use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Cetegory;
-use App\Http\Requests\StoreblogRequest;
-use App\Http\Requests\UpdateblogRequest;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+Use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -14,7 +19,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('dashboard.blog.index');
+        $blogs = Blog::latest()->get();
+        return view('dashboard.blog.index',compact('blogs'));
+
     }
 
     /**
@@ -22,17 +29,57 @@ class BlogController extends Controller
      */
     public function create_blog()
     {
-        $cetegories = cetegory::where('status','active')->latest()->get();
+        $cetegories = cetegory::where('status', 'active')->latest()->get();
         return view('dashboard.blog.create', compact('cetegories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreblogRequest $request)
-    {
-        //
+    public function store(StoreBlogRequest $request) {
+      $request->validate([
+    "category_id" => 'required', // Correct the typo here
+    "title" => 'required',
+    "thumbnail" => 'required',
+    "short_description" => 'required',
+    "description" => 'required',
+]);
+
+        if ($request->hasFile('thumbnail')) {
+            $manager = new ImageManager(new Driver());
+            $newname = Auth::user()->id . '-' . Str::random(4) . "." . $request->file('thumbnail')->getClientOriginalExtension();
+            $image = $manager->read($request->file('thumbnail'));
+            $image->toPng()->save(base_path('public/uploads/blog/' . $newname));
+
+            if ($request->slug) {
+                Blog::create([
+                    'user_id' => Auth::user()->id,
+                    "category_id" => $request->category_id,
+                    "title" => $request->title,
+                    "slug" => Str::slug($request->title, '-'),
+                    "thumbnail" => $newname,
+                    "short_description" => $request->short_description,
+                    "description" => $request->description,
+                    'created_at' => now(),
+                ]);
+                return redirect()->route('blog_create')->with('blog_insert', 'Blog Insert Successfull');
+            } else {
+                Blog::create([
+                    'user_id' => Auth::user()->id,
+                    "category_id" => $request->category_id,
+                    "title" => $request->title,
+                    "slug" => Str::slug($request->title, '-'),
+                    "thumbnail" => $newname,
+                    "short_description" => $request->short_description,
+                    "description" => $request->description,
+                    'created_at' => now(),
+                ]);
+              return redirect()->route('blog_create')->with('blog_insert', 'Blog Insert Successfull');
+
+            }
+        }
     }
+
 
     /**
      * Display the specified resource.

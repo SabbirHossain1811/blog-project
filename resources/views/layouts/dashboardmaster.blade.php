@@ -24,7 +24,7 @@
     <link href="{{ 'bashboard' }}/assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="{{ 'bashboard' }}/assets/js/config.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
+    <script src="https://cdn.tiny.cloud/1/1npveuwnonfrsdc4udmarirqqtjeal3zzxfhmrzx6cn14tbd/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>
