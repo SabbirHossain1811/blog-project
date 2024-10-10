@@ -1,20 +1,20 @@
 @extends('layouts.dashboardmaster')
 @section('title')
-    Blog Create Page's
+    Blog edit Page's
 @endsection
 @section('contant')
-    <x-breadcum sabbir="Blog's Show Page"></x-breadcum>
+    <x-breadcum sabbir="Blog's edit Page"></x-breadcum>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3">Blog Create</h4>
-                <form role="form" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+                <h4 class="header-title mb-3">Blog Update</h4>
+                <form role="form" action="{{ route('blog.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method("PATCH")
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Blog Title</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="Blog Title"
-                                name="title">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="Blog Title" name="title" value="{{ $blog->title }}">
                             @error('title')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -24,7 +24,7 @@
                         <label for="inputPassword3" class="col-sm-3 col-form-label">Blog Slug</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputPassword3" placeholder="blog Slug"
-                                name="slug">
+                                name="slug" value="{{ $blog->slug }}">
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@
                                 <option>Select</option>
                                 <optgroup label="{{ env('APP_NAME') }}">
                                     @foreach ($cetegories as $cat)
-                                        <option value="{{ $cat->id }}">{{ $cat->title }}</option>
+                                        <option {{ $cat->id == $blog->category_id ? 'selected' : ''  }} value="{{ $cat->id }}">{{ $cat->title }}</option>
                                     @endforeach
                                 </optgroup>
                             </select>
@@ -48,7 +48,7 @@
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label"> Short Description</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" name="short_description" id="blogproject"></textarea>
+                            <textarea class="form-control" name="short_description" id="blogproject">{{ $blog->short_description }}</textarea>
                             @error('short_description')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -57,7 +57,7 @@
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label"> Long Description</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" name="description" id="blogprojectlong"></textarea>
+                            <textarea class="form-control" name="description" id="blogprojectlong">{{ $blog->description }}</textarea>
                             @error('description')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror

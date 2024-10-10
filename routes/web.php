@@ -58,3 +58,5 @@ Route::post('/cetegory/status/{id}', [CetegoryController::class, 'status'])->nam
 // problem solve
 Route::resource('/blog',BlogController::class);
 Route::get('create', [BlogController::class, 'create_blog'])->name('blog_create');
+Route::get('edit', [BlogController::class, 'edit_blog'])->name('blog_edit');
+Route::post('/blog/update', [BlogController::class, 'update'])->name('blog.update');
