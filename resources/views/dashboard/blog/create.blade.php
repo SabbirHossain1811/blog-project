@@ -154,10 +154,10 @@
 
 @section('script')
    {{-- password --}}
-   @if (session('password_update'))
+   @if (session('success'))
    <script>
        Toastify({
-           text: "{{ session('password_update') }}",
+           text: "{{ session('success') }}",
            duration: 3000,
            destination: "https://github.com/apvarun/toastify-js",
            newWindow: true,

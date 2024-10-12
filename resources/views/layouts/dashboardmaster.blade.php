@@ -14,17 +14,20 @@
     <meta content="Myra Studio" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ 'bashboard' }}/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('bashboard/assets/images/favicon.icon') }}">
 
-    <link href="{{ 'bashboard' }}/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-
+    <link href="{{ asset('bashboard/assets/libs/morris.js/morris.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Correct way to link local assets -->
+    <link href="{{ asset('bashboard/assets/css/style.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- App css -->
-    <link href="{{ 'bashboard' }}/assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="{{ 'bashboard' }}/assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <script src="{{ 'bashboard' }}/assets/js/config.js"></script>
+    <link href="{{ asset('bashboard/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ asset('bashboard/assets/js/config.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script src="https://cdn.tiny.cloud/1/1npveuwnonfrsdc4udmarirqqtjeal3zzxfhmrzx6cn14tbd/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/1npveuwnonfrsdc4udmarirqqtjeal3zzxfhmrzx6cn14tbd/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -40,18 +43,14 @@
 
                 <!-- Brand Logo Light -->
                 <a class='logo-light' href='index.html'>
-                    <img src="{{ 'bashboard' }}/assets/images/logo-light.png" alt="logo" class="logo-lg"
-                        height="28">
-                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm"
-                        height="28">
+                    <img src="{{ asset('bashboard') }}/assets/images/logo-light.png" alt="logo" class="logo-lg" height="28">
+                    <img src="{{ asset('bashboard') }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a class='logo-dark' href='index.html'>
-                    <img src="{{ 'bashboard' }}/assets/images/logo-dark.png" alt="dark logo" class="logo-lg"
-                        height="28">
-                    <img src="{{ 'bashboard' }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm"
-                        height="28">
+                    <img src="{{ asset('bashboard') }}/assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="28">
+                    <img src="{{ asset('bashboard') }}/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
                 </a>
             </div>
 
@@ -70,30 +69,29 @@
                     </li>
 
                     {{-- role management sesssio start --}}
-                    @if (Auth::user()->role == "admin" || Auth::user()->role == "manager")
-
-                    <li class="menu-title">Management Role & Permission</li>
-                     <li class="menu-item">
-                         <a href="#menuRole" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                             <span class="menu-icon"><i class="bx bx-file"></i></span>
-                             <span class="menu-text"> Role & Permission </span>
-                             <span class="menu-arrow"></span>
-                         </a>
-                         <div class="collapse" id="menuRole">
-                             <ul class="sub-menu">
-                                 <li class="menu-item">
-                                     <a class='menu-link' href='{{ route('management.index') }}'>
-                                         <span class="menu-text">Assign Role & Register</span>
-                                     </a>
-                                 </li>
-                                 <li class="menu-item">
-                                     <a class='menu-link' href='{{ route('role_session') }}'>
-                                         <span class="menu-text">Assign Existing Users Role</span>
-                                     </a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </li>
+                    @if (Auth::user()->role == 'admin' || Auth::user()->role == 'manager')
+                        <li class="menu-title">Management Role & Permission</li>
+                        <li class="menu-item">
+                            <a href="#menuRole" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                                <span class="menu-icon"><i class="bx bx-file"></i></span>
+                                <span class="menu-text"> Role & Permission </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="menuRole">
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a class='menu-link' href='{{ route('management.index') }}'>
+                                            <span class="menu-text">Assign Role & Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class='menu-link' href='{{ route('role_session') }}'>
+                                            <span class="menu-text">Assign Existing Users Role</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     @endif
 
                     {{-- profile session start here --}}
@@ -247,8 +245,8 @@
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
-                                data-bs-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false"
-                                aria-expanded="false">
+                                data-bs-toggle="dropdown" href="javascript:void(0);" role="button"
+                                aria-haspopup="false" aria-expanded="false">
                                 <i class="mdi mdi-bell font-size-24"></i>
                                 <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
                             </a>
@@ -407,14 +405,18 @@
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                                data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                aria-expanded="false">
                                 @if (auth()->user()->image == 'default.jpg')
-                                <img src="{{ asset('update/default') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
+                                    <img src="{{ asset('update/default') }}/{{ auth()->user()->image }}"
+                                        alt="user-image" class="rounded-circle">
                                 @else
-                                <img src="{{ asset('update/profile') }}/{{ auth()->user()->image }}" alt="user-image" class="rounded-circle">
+                                    <img src="{{ asset('update/profile') }}/{{ auth()->user()->image }}"
+                                        alt="user-image" class="rounded-circle">
                                 @endif
                                 <span class="ms-1 d-none d-md-inline-block">
-                                 {{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
+                                    {{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -530,6 +532,8 @@
     {{-- swwet alart --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> --}}
 
     @yield('script')

@@ -54,6 +54,80 @@ class CetegoryController extends Controller
     }
 
 // edit session here.
+public function edit($slug){
+
+    $category = Cetegory::where('slug',$slug)->first();
+
+    return view('dashboard.cetegory.edit',[
+        'omar' => $category,
+    ]);
+}
+
+
+public function update(Request $request , $slug){
+    $category = Cetegory::where('slug',$slug)->first();
+    $manager = new ImageManager(new Driver());
+
+    $request->validate([
+        'title' => 'required',
+    ]);
+
+    if($request->hasFile('image')){
+
+        if($category->image){
+            $oldpath = base_path('public/uploads/category/'.$category->image);
+
+            if(file_exists($oldpath)){
+                unlink($oldpath);
+            }
+        }
+
+        $newname = auth()->id().'-'.Str::random(6).'.'.$request->file('image')->getClientOriginalExtension();
+        $image = $manager->read($request->file('image'));
+        $image->toPng()->save(base_path('public/uploads/cetegory/'.$newname));
+
+        if($request->slug){
+            Cetegory::find($category->id)->update([
+                'title' => Str::ucfirst($request->title),
+                'slug' => Str::slug($request->slug,'-'),
+                'image' => $newname,
+                'updated_at' => now(),
+            ]);
+
+            return redirect()->route('cetegory.index')->with('cat_success' , "Category Create Successfull");
+        }else{
+            Cetegory::find($category->id)->update([
+                'title' => Str::ucfirst($request->title),
+                'slug' => Str::slug($request->title,'-'),
+                'image' => $newname,
+                'updated_at' => now(),
+            ]);
+            return redirect()->route('cetegory.index')->with('cat_success' , "Category Create Successfull");
+        }
+
+    }else{
+
+        if($request->slug){
+            Cetegory::find($category->id)->update([
+                'title' => Str::ucfirst($request->title),
+                'slug' => Str::slug($request->slug,'-'),
+                'updated_at' => now(),
+            ]);
+
+            return redirect()->route('cetegory.index')->with('cat_success' , "Category Create Successfull");
+        }else{
+            Cetegory::find($category->id)->update([
+                'title' => Str::ucfirst($request->title),
+                'slug' => Str::slug($request->title,'-'),
+                'updated_at' => now(),
+            ]);
+            return redirect()->route('cetegory.index')->with('cat_success' , "Category Create Successfull");
+        }
+
+    }
+
+
+}
 
 // edit session here.
 

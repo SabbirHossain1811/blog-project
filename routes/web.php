@@ -51,6 +51,8 @@ Route::get('/user/destroy/{id}', [NameController::class, 'user_destroy'])->name(
 // cetegory session start here......
 Route::get('/cetegory', [CetegoryController::class, 'index'])->name('cetegory.index');
 Route::post('/category/store', [CetegoryController::class, 'store'])->name('category.store');
+Route::get('/category/edit/{slug}',[CetegoryController::class,'edit'])->name('category.edit');
+Route::post('/category/update/{slug}',[CetegoryController::class,'update'])->name('category.update');
 Route::get('/cetegory/destroy/{slug}', [CetegoryController::class, 'destroy'])->name('category.destroy');
 Route::post('/cetegory/status/{id}', [CetegoryController::class, 'status'])->name('category.status');
 
@@ -58,5 +60,5 @@ Route::post('/cetegory/status/{id}', [CetegoryController::class, 'status'])->nam
 // problem solve
 Route::resource('/blog',BlogController::class);
 Route::get('create', [BlogController::class, 'create_blog'])->name('blog_create');
-Route::get('edit', [BlogController::class, 'edit_blog'])->name('blog_edit');
-Route::post('/blog/update', [BlogController::class, 'update'])->name('blog.update');
+Route::post('/blog/status/{id}', [BlogController::class, 'updateStatus'])->name('blog.status');
+

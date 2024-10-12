@@ -1,9 +1,9 @@
 @extends('layouts.dashboardmaster')
 @section('title')
-Cetegry Page's
+    Cetegry Page's
 @endsection
 @section('contant')
-<x-breadcum  sabbir="Cetegory's  Page"></x-breadcum>
+    <x-breadcum sabbir="Cetegory's  Page"></x-breadcum>
     <div class="row">
         <div class="col-lg-7">
             <div class="card">
@@ -48,8 +48,9 @@ Cetegry Page's
                                         </form>
                                     </td>
                                     <td>
-                                        <a href="#" type="button"  class="btn btn-outline-info editbtn waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#Modaleedit">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        <a href="{{ route('category.edit', $cetegorie->slug) }}"
+                                            class="btn btn-outline-info waves-effect waves-light">
+                                            <i class="fa-regular fa-pen-to-square"></i>
                                         </a>
                                         <a href="{{ route('category.destroy', $cetegorie->slug) }}"
                                             class="btn btn-outline-danger waves-effect waves-light">
@@ -66,7 +67,7 @@ Cetegry Page's
 
 
 
-<div class="col-lg-5">
+        <div class="col-lg-5">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-3">Category Insert</h4>
@@ -118,8 +119,8 @@ Cetegry Page's
 
 
 
-<!-- Modal Structure -->
-{{-- <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <!-- Modal Structure -->
+        {{-- <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -172,26 +173,24 @@ Cetegry Page's
         </div>
     </div>
 </div> --}}
+    @endsection
 
-@endsection
-
-@section('script')
-    @if (session('cat_success'))
-        <script>
-            Toastify({
-                text: "{{ session('cat_success') }}",
-                duration: 3000,
-                newWindow: true,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                    background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
-                },
-                onClick: function() {} // Callback after click
-            }).showToast();
-        </script>
-    @endif
-
-@endsection
+    @section('script')
+        @if (session('cat_success'))
+            <script>
+                Toastify({
+                    text: "{{ session('cat_success') }}",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to  right, #FF512F ,#DD2475 )",
+                    },
+                    onClick: function() {} // Callback after click
+                }).showToast();
+            </script>
+        @endif
+    @endsection
