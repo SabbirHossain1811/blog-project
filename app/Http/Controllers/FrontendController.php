@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cetegory;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index(){
-        return view('fontend.home.index');
+        $cetegories = Cetegory::where('status', 'active')->latest()->get();
+        return view('fontend.home.index',compact('cetegories'));
     }
 }

@@ -9,20 +9,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- favicon -->
-    <link rel="icon" sizes="16x16" href="{{ asset('fontend') }}/assets/img/favicon.png">
+    <link rel="icon" sizes="16x16" href="{{ asset('blogpage') }}/assets/img/favicon.png">
 
     <!-- Title -->Stay Connected
     <title>@yield('title')</title>
 
     <!-- CSS Plugins -->
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/line-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/fontawesome.css">
 
     <!-- main style -->
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/style.css">
-    <link rel="stylesheet" href="{{ asset('fontend') }}/assets/css/custom.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('blogpage') }}/assets/css/custom.css">
 </head>
 
 <body>
@@ -38,8 +38,8 @@
                 <!--logo-->
                 <div class="logo">
                     <a href="index.html">
-                        <img src="{{ asset('fontend') }}/assets/img/logo/logo-dark.png" alt="" class="logo-dark">
-                        <img src="{{ asset('fontend') }}/assets/img/logo/logo-white.png" alt="" class="logo-white">
+                        <img src="{{ asset('blogpage') }}/assets/img/logo/logo-dark.png" alt="" class="logo-dark">
+                        <img src="{{ asset('blogpage') }}/assets/img/logo/logo-white.png" alt="" class="logo-white">
                     </a>
                 </div>
                 <div class="header-navbar">
@@ -199,21 +199,21 @@
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{ asset('fontend') }}/assets/js/jquery.min.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/popper.min.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/jquery.min.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/popper.min.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/bootstrap.min.js"></script>
 
 
 <!-- JS Plugins  -->
-<script src="{{ asset('fontend') }}/assets/js/theia-sticky-sidebar.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/ajax-contact.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/owl.carousel.min.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/switch.js"></script>
-<script src="{{ asset('fontend') }}/assets/js/jquery.marquee.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/theia-sticky-sidebar.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/ajax-contact.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/owl.carousel.min.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/switch.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/jquery.marquee.js"></script>
 
 
 <!-- JS main  -->
-<script src="{{ asset('fontend') }}/{{ asset('fontend') }}/assets/js/main.js"></script>
+<script src="{{ asset('blogpage') }}/assets/js/main.js"></script>
 
 
 </body>

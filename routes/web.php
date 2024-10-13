@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CetegoryController;
+use App\Http\Controllers\Fontend\CetegoryBlogController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagementController;
@@ -12,8 +13,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 
 route::get('/', [FrontendController::class, 'index']);
+route::get('/cetegory/{slug}', [CetegoryBlogController::class, 'show'])->name('cetegoy.show.blog');
 
-Auth::routes(['register' => false]);
+
+Auth::routes();
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
