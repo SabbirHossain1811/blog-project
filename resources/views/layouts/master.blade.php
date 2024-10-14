@@ -48,10 +48,10 @@
                         <div class="collapse navbar-collapse" id="main_nav">
                             <ul class="navbar-nav ">
                                 <li class="nav-item ">
-                                    <a class="nav-link active" href="index.html"> Home </a>
+                                    <a class="nav-link {{ Route::currentRouteName() == 'index' ? 'active' : ''  }}" href="{{ route('fontend') }}"> Home </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="blog.html"> Blogs </a>
+                                    <a class="nav-link {{ Route::currentRouteName() == 'cetegoy.blogs' ? 'active' : ''  }}" href="{{ route('cetegoy.blogs') }}"> Blogs </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="author.html"> Authors </a>

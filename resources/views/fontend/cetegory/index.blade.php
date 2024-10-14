@@ -67,25 +67,16 @@
 
 
     <!--pagination-->
-    {{ $blogs->links()  }}
-    {{-- <div class="pagination">
+
+    <div class="pagination">
         <div class="container-fluid">
             <div class="pagination-area">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="pagination-list">
-                            <ul class="list-inline">
-                                <li><a href="#"><i class="las la-arrow-left"></i></a></li>
-                                <li><a href="#" class="active">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#"><i class="las la-arrow-right"></i></a></li>
-                            </ul>
-                        </div>
+                            {{ $blogs->links()  }}
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection

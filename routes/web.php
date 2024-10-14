@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CetegoryController;
+use App\Http\Controllers\Fontend\BlogController as FontendBlogController;
 use App\Http\Controllers\Fontend\CetegoryBlogController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
@@ -12,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 
-route::get('/', [FrontendController::class, 'index']);
+route::get('/', [FrontendController::class, 'index'])->name('fontend');
 route::get('/cetegory/{slug}', [CetegoryBlogController::class, 'show'])->name('cetegoy.show.blog');
+route::get('/blogs', [FontendBlogController::class, 'index'])->name('cetegoy.blogs');
+Route::get('/blog/single/{slug}',[FontendBlogController::class,'single'])->name('frontend.blog.single');
 
 
-Auth::routes();
+Auth::routes(['register'=> false]);
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
